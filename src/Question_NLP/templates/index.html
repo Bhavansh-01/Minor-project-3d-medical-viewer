@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Answering System</title>
+</head>
+<body>
+    <h1>Question Answering System</h1>
+
+    <form action="/" method="POST">
+        <label for="paragraph">Enter a paragraph:</label><br>
+        <textarea id="paragraph" name="paragraph" rows="5" cols="50" placeholder="Enter a paragraph"></textarea>
+        <br><br>
+
+        <label for="question">Enter a question:</label><br>
+        <input type="text" id="question" name="question" placeholder="Enter a question">
+        <br><br>
+
+        <input type="submit" value="Get Answer">
+    </form>
+
+    <div id="answer-section">
+        <h2>Answer:</h2>
+        <p id="answer"></p>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const paragraph = document.getElementById('paragraph').value;
+            const question = document.getElementById('question').value;
+
+            fetch('/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams({ paragraph, question })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const answerElement = document.getElementById('answer');
+                answerElement.innerText = data.answer;
+                document.getElementById('answer-section').style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

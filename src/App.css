@@ -1,0 +1,436 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ... previous CSS rules ... */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Change to flex-start */
+  align-items: center;
+  background-color: #000;
+  color: white;
+  min-height: 100vh;
+  text-align: center;
+}
+
+
+.App{
+  background-color: #000;
+}
+.sections-container {
+  display: flex;
+  justify-content: center;
+  margin-top:27vh;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .sections-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a1a;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ... remaining CSS rules ... */
+
+.section-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.item {
+  margin: 5px;
+  font-size: 18px;
+}
+
+.item a {
+  text-decoration: none;
+  color: white;
+}
+
+.item a:hover {
+  text-decoration: underline;
+}
+
+.section:hover {
+  background-color: #333; /* Change background color when hovering */
+  transform: scale(1.05); /* Apply a slight scale effect */
+  transition: background-color 0.3s, transform 0.3s; /* Add smooth transition */
+}
+
+
+.back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.page-heading {
+  font-size: 36px;
+  text-align: center;
+  margin-top:6vh;
+  color:white
+}
+
+.mcq-section {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+}
+
+/* Style the MCQ options labels */
+.mcq-section label, p {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Style the radio buttons */
+.mcq-section input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Add some spacing between questions */
+.mcq-section label + label {
+  margin-top: 15px;
+}
+
+/* Style the submit button if you have one */
+.mcq-section input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Style the submit button on hover */
+.mcq-section input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+.annotation {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-size: 8px;
+  font-weight: 300;
+  background: black;
+  color: #f0f0f0;
+  padding: 2px 10px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+#respond {
+  margin-top: 40px;
+  color:white;
+  display:flex;
+  justify-content: center;
+}
+
+#respond input[type='text'],
+#respond input[type='email'],
+#respond textarea {
+  margin-bottom: 10px;
+  display: block;
+  width: 60%;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+
+  line-height: 1.4em;
+}
+
+#respond form{
+  width:60%;
+}
+
+#form_head{
+  margin-right:10vh
+}
+.annotation {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+.annotation-content {
+  background: white;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  visibility: hidden;
+}
+
+.annotation {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+.annotation-content {
+  background: white;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.popup {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  display: inline-block;
+}
+
+.popup.open {
+  display: block;
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+}
+
+.popup-content .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.popup-content .close:hover,
+.popup-content .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* QuestionAnswering.css */
+
+/* Style for the container */
+.QnContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  height:100vw;
+  background-color: #000;
+  color: white;
+}
+
+/* Style for headings */
+.Qnh1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.Qnh2 {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+/* Style for input and button */
+.lqn {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+#question {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.bnQn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.bnQn:hover {
+  background-color: #0056b3;
+}
+
+/* Style for the answer */
+.answer {
+  margin-top: 20px;
+}
+
+
+.annot{
+  display: block;
+  z-index: 5;
+  visibility: visible;
+}
+
+/* .annot.active{
+  visibility: hidden;
+} */
+
+#loginname{
+  color:white;
+  font-size: 1.8vh;
+  margin-left: 1vh;
+}
+
+#logph{
+  width:8vh;
+  margin-left: 2.3vh;
+}
+
+#loginb,#logoutb{
+  position:absolute;
+  top:0;
+  right:0;
+  border-radius: 2%;
+  width:5%;
+}
+
+.btn-6 {
+  background: #000;
+ color: #fff;
+ line-height: 42px;
+
+ border: none;
+}
+.btn-6 span {
+ position: relative;
+ display: block;
+ width: 100%;
+ height: 100%;
+}
+.btn-6:before,
+.btn-6:after {
+ position: absolute;
+ content: "";
+ height: 0%;
+ width: 2px;
+ background: #000;
+}
+.btn-6:before {
+ right: 0;
+ top: 0;
+ transition: all 500ms ease;
+}
+.btn-6:after {
+ left: 0;
+ bottom: 0;
+ transition: all 500ms ease;
+}
+.btn-6:hover{
+ color: #000;
+ background: white;
+}
+.btn-6:hover:before {
+ transition: all 500ms ease;
+ height: 100%;
+}
+.btn-6:hover:after {
+ transition: all 500ms ease;
+ height: 100%;
+}
+.btn-6 span:before,
+.btn-6 span:after {
+ position: absolute;
+ content: "";
+ background: #000;
+}
+.btn-6 span:before {
+ left: 0;
+ top: 0;
+ width: 0%;
+ height: 2px;
+ transition: all 500ms ease;
+}
+.btn-6 span:after {
+ right: 0;
+ bottom: 0;
+ width: 0%;
+ height: 2px;
+ transition: all 500ms ease;
+}
+.btn-6 span:hover:before {
+ width: 100%;
+}
+.btn-6 span:hover:after {
+ width: 100%;
+}
+
+
+
+
+/* CSS */
+.button-24 {
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.button-24:hover,
+.button-24:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+
+.button-24:active {
+  opacity: .5;
+}
